@@ -2,21 +2,37 @@ package algorithm_final;
 
 import java.util.*;
 
+
+
 public class Main {
 	public static void main(String[] args) {
 		line subway = new line();
 		int userCount = 0;
+		
+		db test = new db();
+		test.tableSelect();
+		test.userCount();
+		userCount = test.a;
+		System.out.println(userCount);
 
-		System.out.println("사용자의 수는 몇명입니까 ? ");
+		//System.out.println("사용자의 수는 몇명입니까 ? ");
 
-		Scanner sc = new Scanner(System.in);
-		userCount = sc.nextInt();
+		//Scanner sc = new Scanner(System.in);
+		//userCount = sc.nextInt();
 		user[] user = new user[userCount];
 		ArrayList<String> commonset = new ArrayList<String>();
 
 		for (int i = 0; i < userCount; i++) {
 			user[i] = new user();
 		}
+		
+		test.subwaySelect();
+		
+		for(int i =0; i < test.buffer.size();i++) {
+			user[i].userStationName = test.buffer.get(i);
+			System.out.println("user[i]의 지하철 : "+user[i].userStationName);
+		}
+
 
 		subway.setLine();
 		subway.showLine();

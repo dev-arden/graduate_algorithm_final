@@ -20,10 +20,7 @@ public class user extends line {
 
 	public void userpick() {
 		System.out.println("\n지하철 고르쇼");
-		Scanner sc = new Scanner(System.in);
-		userStationName = sc.nextLine();
-		// sc.close();
-
+	
 		System.out.println(this.userStationName + "역을 선택하셨습니다.");
 		this.buffer.addAll(this.findStationInAll(AllLine, userStationName));
 	}
